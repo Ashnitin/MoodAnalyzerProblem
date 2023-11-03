@@ -27,4 +27,9 @@ public class MoodAnalyzerTest {
         MoodAnalyzer moodAnalyzer=new MoodAnalyzer("I am in happy Mood");
         Assertions.assertEquals("HAPPY",moodAnalyzer.givenConstructorShouldReturnSAD());
     }
+    @Test
+    public void givenNullMoodShouldReturnHappy(){
+        MoodAnalyzer moodAnalyzer=new MoodAnalyzer(null);
+        Assertions.assertEquals("HAPPY",moodAnalyzer.given_null_with_should_Return_Happy());
+    }
 }
