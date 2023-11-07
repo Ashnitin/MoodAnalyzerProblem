@@ -1,6 +1,7 @@
 package com.test;
 
 import com.bridgelabz.MoodAnalyzer;
+import com.bridgelabz.MoodNullException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -31,5 +32,10 @@ public class MoodAnalyzerTest {
     public void givenNullMoodShouldReturnHappy(){
         MoodAnalyzer moodAnalyzer=new MoodAnalyzer(null);
         Assertions.assertEquals("HAPPY",moodAnalyzer.given_null_with_should_Return_Happy());
+    }
+    @Test
+    public void givenNullMoodThrowCustomException() throws MoodNullException {
+        MoodAnalyzer moodAnalyzer=new MoodAnalyzer(null);
+        Assertions.assertEquals(null,moodAnalyzer.givenNullThrowCustomException());
     }
 }
